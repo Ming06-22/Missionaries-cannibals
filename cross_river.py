@@ -7,7 +7,6 @@ import time
 A = 2  # Capacity of BoatA
 B = 3  # Capacity of BoatB
 number = 1
-version = 0
 
 # Expand node
 def addChild(list, current):
@@ -226,15 +225,15 @@ if __name__ == '__main__':
     print("(3) Uniform cost search base on money cost")
     print("(4) Uniform cost search base on time cost\n")
     while(True):
-        version = input("Please enter the version number:")
-        if version in ["1", "2", "3", "4"]:
+        state.version = input("Please enter the version number:")
+        if state.version in ["1", "2", "3", "4"]:
             break
         else:
             print("Please enter one to four.\n")
     state.M = int(input("Please enter the amount of missionary:"))
     state.C = int(input("Please enter the amount of cannibal:"))
     limit = int(input("Please enter the limit:"))
-    if version == "1" or version == "3":
+    if state.version == "1" or state.version == "3":
         A_COST = 3
         B_COST = 25
         AB_COST = 28

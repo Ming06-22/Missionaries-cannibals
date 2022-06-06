@@ -14,8 +14,7 @@ class State:
         self.boat = BoatState(0, 0, 0, 0)
         self.cost = 0
     def display(self):
-        print(f"{self.m:<11}{self.c:<9}{self.a:<7}{self.b:<7}", end = "")
-        print(self.boat.node)
+        print(f"{self.m:<11}{self.c:<9}{self.a:<7}{self.b:<7}{self.boat.node}")
 
 class BoatState:
     def __init__(self, am, ac, bm, bc):
@@ -56,7 +55,7 @@ def isLegal(bank, boat):
 
 # Heuristic funtion
 def h(s):
-    if cross_river.version == 1 or cross_river.version == 3:
+    if version == "1" or version == "2":
         tmp = s.m + s.c - 2 * s.a - 3 * s.b
         if tmp >= 0:
             return tmp
